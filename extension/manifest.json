@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "ToxiShield",
+  "version": "1.0",
+  "description": "Detects and hides toxic comments on Instagram using AI.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": [
+    "https://toxishield.onrender.com/*",
+    "https://www.instagram.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.instagram.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
